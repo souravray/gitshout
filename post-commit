@@ -1,0 +1,11 @@
+#!/bin/sh
+if git rev-parse --verify HEAD >/dev/null 2>&1
+then
+  read -p "Add a SHOUT (y/n)?"
+  if [ "$REPLY" == "y" ]
+  then
+    a=`git rev-parse --verify HEAD`
+    /usr/bin/python recordAudio.py $a
+  fi
+fi
+
